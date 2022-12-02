@@ -62,7 +62,7 @@ def compare():
                 continue
             
             if "shufflenet" in classifiername or "mobilenet" in classifiername:
-                scale_factor = 0.17
+                scale_factor = 0.017
                 mean = (103.94, 116.78, 123.68)
             else:
                 scale_factor = 1
