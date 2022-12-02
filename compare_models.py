@@ -51,15 +51,19 @@ def compare():
         for classifier in classifiers:
             classifier = Classifier(classifier)
             classifier.input_image = image
+
             for file in os.listdir(classifier.path_to_classifier):
                 if "prototext" in file:
                     classifier.prototext = file
                 elif "caffemodel" in file:
                     classifier.input_model = file
+            print(classifier.prototxt)
+            print(classifier.image)
+            print(classifier.model)
+            print(classifier.labels)
+            classifier.classify()
+            results.append(classifier)
 
-                classifier.image = image
-                classifier.classify()
-                results.append(classifier)
     return results
 
 def write_results_to_file(results):
