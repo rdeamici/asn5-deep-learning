@@ -48,15 +48,19 @@ class Classifier:
 
 
 def compare():
-    classifiers = ["alexnet","googlenet","mobilenet","resnet_101","shufflenet"]
+    classifiers = ["alexnet","googlenet","mobilenet","resnet_101","shufflenet", "squeezenet"]
     results = []
 
     for image in os.listdir(path_to_images):
-        for classifier in classifiers:
-            classifier = Classifier(classifier)
+        for classifiername in os.listdir(path_to_classifiers):
+            if os.path.isfile(os.path.join(path_to_classifiers,item)):
+                continue
+            classifier = Classifier(classifiername)
             classifier.input_image = image
 
             for file in os.listdir(classifier.path_to_classifier):
+                if "152" in file:
+                    continue
                 if "prototxt" in file:
                     classifier.prototext = file
                 elif "caffemodel" in file:
