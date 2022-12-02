@@ -1,7 +1,7 @@
 classifier,best guess,probability,correct label,probability,total_time,flops
-alexnet,Weimaraner,0.19839,beagle,0.034158,0.31197,2326726595
-shufflenet,spotlight,258.36,beagle,-84.933,0.16082,1439342056
-resnet_101,beagle,0.63837,beagle,0.63837,4.1684,15270642592
-googlenet,beagle,0.73989,beagle,0.73989,0.59364,3190443136
-mobilenet,candle,0.9995,beagle,1.51e-12,0.35681,9692871048
-squeezenet,Walker hound,0.37675,beagle,0.37005,0.18654,706628160
+alexnet,Weimaraner,0.19839,beagle,0.034158,0.31207,2326726595
+shufflenet,matchstick,47.567,beagle,-8.3277,0.16328,1439342056
+resnet_101,beagle,0.63837,beagle,0.63837,4.2075,15270642592
+googlenet,beagle,0.73989,beagle,0.73989,0.59417,3190443136
+mobilenet,jersey,0.060402,beagle,0.0009964,0.36142,9692871048
+squeezenet,Walker hound,0.37675,beagle,0.37005,0.19058,706628160

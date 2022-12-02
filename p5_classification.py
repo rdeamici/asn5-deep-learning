@@ -83,7 +83,6 @@ def parse_args():
 
 if __name__ == "__main__":
     args = parse_args()
-    args.scale_factor = 1 if  args.prototxt
     image, total_time, labels, probabilities, flops = classify(args)
 
     # display the output image

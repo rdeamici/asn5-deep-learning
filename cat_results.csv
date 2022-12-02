@@ -1,7 +1,7 @@
 classifier,best guess,probability,total_time,flops
-alexnet,red fox,0.37571,0.30941,2326726595
-shufflenet,spotlight,288.66,0.15831,1439342056
-resnet_101,tiger cat,0.22623,4.1743,15270642592
-googlenet,tiger cat,0.5004,0.59412,3190443136
-mobilenet,candle,0.30695,0.3613,9692871048
-squeezenet,kit fox,0.45602,0.15546,706628160
+alexnet,red fox,0.37571,0.31136,2326726595
+shufflenet,torch,50.417,0.16002,1439342056
+resnet_101,tiger cat,0.22623,4.2073,15270642592
+googlenet,tiger cat,0.5004,0.59702,3190443136
+mobilenet,tiger cat,0.39647,0.35981,9692871048
+squeezenet,kit fox,0.45602,0.15705,706628160
