@@ -144,6 +144,7 @@ def write_results_to_file(results):
 
                     f.write(delimiter+"{:.5}".format(classifier.total_time))
                     flops = str(classifier.flops)
+                    print("[INFO]"+delimiter+flops, file = sys.stderr)
                     f.write(delimiter+flops)
                     print("[INFO] FLOPS",flops, file=sys.stderr)
                     f.write("\n")
