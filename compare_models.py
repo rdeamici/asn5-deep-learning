@@ -8,9 +8,9 @@ class Classifier:
         self.labels = "synset_words.txt"
         
         self.path_to_classifier = self.path_to_classifiers+name
-        self._prototext = None
-        self._model = None
-        self._image = None
+        self.prototxt = None
+        self.model = None
+        self.image = None
         self.result_image = None
         self.total_time = None
         self.cl_labels = None
@@ -18,25 +18,25 @@ class Classifier:
 
     @property
     def prototext(self):
-        return self._prototext
+        return self.prototxt
     @prototext.setter
     def prototext(self, filename):
-        self._prototext = self.path_to_classifier+filename
+        self.prototxt = self.path_to_classifier+filename
 
 
     @property
-    def model(self):
-        return self._model
-    @model.setter
-    def model(self, filename):
-        self._model = self.path_to_classifier+filename
+    def input_model(self):
+        return self.model
+    @input_model.setter
+    def input_model(self, filename):
+        self.model = self.path_to_classifier+filename
 
     @property
-    def image(self):
-        return self._image
-    @image.setter
-    def image(self, filename):
-        self._image = self.path_to_images+filename
+    def input_image(self):
+        return self.image
+    @input_image.setter
+    def input_image(self, filename):
+        self.image = self.path_to_images+filename
 
     def classify(self):
         self.result_image, self.total_time, self.cl_labels, self.probabilities = p5_classify(self)
@@ -50,12 +50,12 @@ def compare():
     for image in os.listdir(path_to_images):
         for classifier in classifiers:
             classifier = Classifier(classifier)
-            classifier.image = image
+            classifier.input_image = image
             for file in os.listdir(classifier.path_to_classifier):
                 if "prototext" in file:
                     classifier.prototext = file
                 elif "caffemodel" in file:
-                    classifier.model = file
+                    classifier.input_model = file
 
                 classifier.image = image
                 classifier.classify()
