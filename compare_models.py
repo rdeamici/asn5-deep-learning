@@ -1,13 +1,15 @@
 from p5_classification import classify as p5_classify
 import os, sys
 
+path_to_classifiers = "caffe_models/image_classification/"
+path_to_images = "caffe_models/images/"
+
 class Classifier:
     def __init__(self, name):
-        self.path_to_classifiers = "caffe_models/image_classification/"
-        self.path_to_images = "caffe_models/images/"
+        self.path_to_images = path_to_images
         self.labels = "synset_words.txt"
         self.name = name
-        self.path_to_classifier = os.path.join(self.path_to_classifiers, name)
+        self.path_to_classifier = os.path.join(path_to_classifiers, name)
         self.prototxt = None
         self.model = None
         self.image = None
@@ -47,7 +49,6 @@ class Classifier:
 
 def compare():
     classifiers = ["alexnet","googlenet","mobilenet","resnet_101","shufflenet"]
-    path_to_images = "caffe_models/images/"
     results = []
 
     for image in os.listdir(path_to_images):
@@ -89,12 +90,11 @@ def compare():
     return results
 
 def write_results_to_file(results):
-    header = ["image", "classifier","best label", "probability","total_time"]
+    delimiter = ","
+    header = ["image", "classifier","best guess", "probability","total_time"]
     with open("model_results.csv", "w") as f:
-        print(",".join(header), file=f)
-    
-    delimiter = ", "
-    with open("model_results.csv", "a") as f:
+        f.write(delimiter.join(header))
+        f.write("\n")
         for classifier in results:
             f.write(os.path.basename(classifier.image))
             f.write(delimiter+classifier.name)
@@ -102,6 +102,41 @@ def write_results_to_file(results):
             f.write(delimiter+"{:.5}".format(classifier.probabilities[0]))
             f.write(delimiter+"{:.5}".format(classifier.total_time))
             f.write("\n")
+
+    image_header = ["classifier", "best guess", "probability", "correct label", "probability", "total_time"]
+    for image in os.listdir(path_to_images):
+        filename = os.path.basename(image)
+        image_name, ext = os.path.splitext(filename)
+        filename = os.path.join(image_name+"_results.csv")
+        with open(filename,"w") as f:
+            if "cat" in image:
+                h = image_header[:3]+image_header[5:]
+            else:
+                h = image_header
+            f.write(delimiter.join(h)+"\n")
+            for classifier in results:
+                if image_name in classifier.image:
+                    synset_label = image_name.replace("_"," ")
+                    # jemma is the name of a beagle
+                    if "jemma" in synset_label:
+                        synset_label = "beagle"
+                    elif "eagle" in synset_label:
+                        synset_label = "bald eagle"
+                    # cat.jpg is the only one without a specific result we are looking for
+                    elif "cat" in synset_label:
+                        synset_label = None
+                    f.write(classifier.name)
+                    f.write(delimiter+classifier.cl_labels[0])
+                    f.write(delimiter+"{:.5}".format(classifier.probabilities[0]))
+
+                    if synset_label is not None:
+                        for idx, label in enumerate(classifier.cl_labels):
+                            if label == synset_label:
+                                f.write(delimiter+label)
+                                f.write(delimiter+"{:.5}".format(classifier.probabilities[idx]))
+
+                    f.write(delimiter+"{:.5}".format(classifier.total_time))
+                    f.write("\n")
 
 
 def main():
