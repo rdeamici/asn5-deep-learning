@@ -1,5 +1,5 @@
 from p5_classification import classify as p5_classify
-import os
+import os, sys
 
 class Classifier:
     def __init__(self, name):
