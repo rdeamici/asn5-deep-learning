@@ -57,10 +57,12 @@ def compare():
                     classifier.prototext = file
                 elif "caffemodel" in file:
                     classifier.input_model = file
-            print(classifier.prototxt)
-            print(classifier.image)
-            print(classifier.model)
-            print(classifier.labels)
+            if None in (classifier.prototxt, classifier.image, classifier.model, classifier.labels):
+                print("prototxt", classifier.prototxt)
+                print("input image",classifier.image)
+                print("model",classifier.model)
+                print("labels",classifier.labels)
+                sys.exit(1)
             classifier.classify()
             results.append(classifier)
 

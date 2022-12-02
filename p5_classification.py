@@ -14,8 +14,8 @@ import sys
 
 def classify(args):
     # load the input image from disk
-    for k,v in args:
-        print(k,":",v)
+    for item in vars(args):
+        print(item)
 
     image = cv2.imread(args.image)
     # load the class labels from disk
