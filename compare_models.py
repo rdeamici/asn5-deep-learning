@@ -89,20 +89,19 @@ def compare():
     return results
 
 def write_results_to_file(results):
-    header = ["image", "classifier","label", "probability","total_time"]
+    header = ["image", "classifier","best label", "probability","total_time"]
     with open("model_results.csv", "w") as f:
         print(",".join(header), file=f)
     
     delimiter = ", "
     with open("model_results.csv", "a") as f:
         for classifier in results:
-            for cl_label, probability in zip(classifier.cl_labels, classifier.probabilities):
-                f.write(classifier.image)
-                f.write(delimiter+classifier.name)
-                f.write(delimiter+cl_label)
-                f.write(delimiter+probability)
-                f.write(delimiter+classifier.total_time)
-                f.write("\n")
+            f.write(classifier.image)
+            f.write(delimiter+classifier.name)
+            f.write(delimiter+classifier.cl_labels[0])
+            f.write(delimiter+"{:.5}%".format(classifier.probabilities[0]))
+            f.write(delimiter+"{:.5}".format(classifier.total_time))
+            f.write("\n")
 
 
 def main():
