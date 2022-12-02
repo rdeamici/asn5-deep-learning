@@ -1,31 +1,31 @@
 image,classifier,best guess,probability,total_time,flops
-eagle.png,alexnet,bald eagle,0.99944,0.31551,2326726595
-eagle.png,shufflenet,ant,75.172,0.16537,1439342056
-eagle.png,resnet_101,bald eagle,0.99969,4.1697,15270642592
-eagle.png,googlenet,bald eagle,0.99997,0.59547,3190443136
-eagle.png,mobilenet,bald eagle,0.59734,0.35528,9692871048
-eagle.png,squeezenet,bald eagle,0.99987,0.18626,706628160
-cat.jpg,alexnet,red fox,0.37571,0.31136,2326726595
-cat.jpg,shufflenet,torch,50.417,0.16002,1439342056
-cat.jpg,resnet_101,tiger cat,0.22623,4.2073,15270642592
-cat.jpg,googlenet,tiger cat,0.5004,0.59702,3190443136
-cat.jpg,mobilenet,tiger cat,0.39647,0.35981,9692871048
-cat.jpg,squeezenet,kit fox,0.45602,0.15705,706628160
-vending_machine.png,alexnet,vending machine,0.98482,0.31266,2326726595
-vending_machine.png,shufflenet,web site,46.825,0.17023,1439342056
-vending_machine.png,resnet_101,vending machine,0.99898,4.2145,15270642592
-vending_machine.png,googlenet,vending machine,0.9966,0.59462,3190443136
-vending_machine.png,mobilenet,slot,0.30975,0.36053,9692871048
-vending_machine.png,squeezenet,vending machine,0.99641,0.18354,706628160
-jemma.png,alexnet,Weimaraner,0.19839,0.31207,2326726595
-jemma.png,shufflenet,matchstick,47.567,0.16328,1439342056
-jemma.png,resnet_101,beagle,0.63837,4.2075,15270642592
-jemma.png,googlenet,beagle,0.73989,0.59417,3190443136
-jemma.png,mobilenet,jersey,0.060402,0.36142,9692871048
-jemma.png,squeezenet,Walker hound,0.37675,0.19058,706628160
-traffic_light.png,alexnet,traffic light,0.9999,0.30867,2326726595
-traffic_light.png,shufflenet,web site,35.509,0.16001,1439342056
-traffic_light.png,resnet_101,traffic light,1.0,4.1896,15270642592
-traffic_light.png,googlenet,traffic light,1.0,0.59386,3190443136
-traffic_light.png,mobilenet,traffic light,0.99518,0.36507,9692871048
-traffic_light.png,squeezenet,traffic light,0.99983,0.18653,706628160
+eagle.png,alexnet,bald eagle,0.99944,0.31543,2326726595
+eagle.png,shufflenet,bald eagle,27.065,0.16996,1439342056
+eagle.png,resnet_101,bald eagle,0.99969,4.1799,15270642592
+eagle.png,googlenet,bald eagle,0.99997,0.60214,3190443136
+eagle.png,mobilenet,bald eagle,0.99942,0.39174,9692871048
+eagle.png,squeezenet,bald eagle,0.99987,0.1774,706628160
+cat.jpg,alexnet,red fox,0.37571,0.33212,2326726595
+cat.jpg,shufflenet,kit fox,9.9553,0.15503,1439342056
+cat.jpg,resnet_101,tiger cat,0.22623,4.1692,15270642592
+cat.jpg,googlenet,tiger cat,0.5004,0.59447,3190443136
+cat.jpg,mobilenet,tiger cat,0.29074,0.3592,9692871048
+cat.jpg,squeezenet,kit fox,0.45602,0.18643,706628160
+vending_machine.png,alexnet,vending machine,0.98482,0.31465,2326726595
+vending_machine.png,shufflenet,vending machine,17.765,0.19819,1439342056
+vending_machine.png,resnet_101,vending machine,0.99898,4.289,15270642592
+vending_machine.png,googlenet,vending machine,0.9966,0.59688,3190443136
+vending_machine.png,mobilenet,vending machine,0.99298,0.35673,9692871048
+vending_machine.png,squeezenet,vending machine,0.99641,0.19135,706628160
+jemma.png,alexnet,Weimaraner,0.19839,0.31168,2326726595
+jemma.png,shufflenet,beagle,14.056,0.16363,1439342056
+jemma.png,resnet_101,beagle,0.63837,4.158,15270642592
+jemma.png,googlenet,beagle,0.73989,0.5933,3190443136
+jemma.png,mobilenet,beagle,0.70329,0.35713,9692871048
+jemma.png,squeezenet,Walker hound,0.37675,0.19024,706628160
+traffic_light.png,alexnet,traffic light,0.9999,0.31396,2326726595
+traffic_light.png,shufflenet,traffic light,23.233,0.16007,1439342056
+traffic_light.png,resnet_101,traffic light,1.0,4.1729,15270642592
+traffic_light.png,googlenet,traffic light,1.0,0.59644,3190443136
+traffic_light.png,mobilenet,traffic light,0.99993,0.3538,9692871048
+traffic_light.png,squeezenet,traffic light,0.99983,0.18667,706628160
