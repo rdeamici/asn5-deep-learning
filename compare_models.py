@@ -61,7 +61,7 @@ def compare():
                 elif "caffemodel" in file:
                     classifier.input_model = file
 
-            if classifier.invalid(path_to_images):
+            if classifier.invalid():
                 print("*********FATAl ERROR*********")
                 issue_in_classifier_dir = False
                 if classifier.prototxt is None:
