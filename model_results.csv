@@ -1,26 +1,26 @@
 image,classifier,best label,probability,total_time
-caffe_models/images/eagle.png, alexnet, bald eagle, 0.99944%, 0.31293
-caffe_models/images/eagle.png, googlenet, bald eagle, 0.99997%, 0.59821
-caffe_models/images/eagle.png, mobilenet, candle, 0.99463%, 0.35963
-caffe_models/images/eagle.png, resnet_101, bald eagle, 0.99969%, 4.0646
-caffe_models/images/eagle.png, shufflenet, ant, 650.25%, 0.15434
-caffe_models/images/cat.jpg, alexnet, red fox, 0.37571%, 0.30893
-caffe_models/images/cat.jpg, googlenet, tiger cat, 0.5004%, 0.5969
-caffe_models/images/cat.jpg, mobilenet, candle, 0.30695%, 0.35665
-caffe_models/images/cat.jpg, resnet_101, tiger cat, 0.22623%, 4.0523
-caffe_models/images/cat.jpg, shufflenet, spotlight, 288.66%, 0.14902
-caffe_models/images/vending_machine.png, alexnet, vending machine, 0.98482%, 0.30894
-caffe_models/images/vending_machine.png, googlenet, vending machine, 0.9966%, 0.59207
-caffe_models/images/vending_machine.png, mobilenet, traffic light, 0.84283%, 0.35877
-caffe_models/images/vending_machine.png, resnet_101, vending machine, 0.99898%, 4.0501
-caffe_models/images/vending_machine.png, shufflenet, ant, 434.1%, 0.15691
-caffe_models/images/jemma.png, alexnet, Weimaraner, 0.19839%, 0.30932
-caffe_models/images/jemma.png, googlenet, beagle, 0.73989%, 0.59557
-caffe_models/images/jemma.png, mobilenet, candle, 0.9995%, 0.35579
-caffe_models/images/jemma.png, resnet_101, beagle, 0.63837%, 4.1042
-caffe_models/images/jemma.png, shufflenet, spotlight, 258.36%, 0.16107
-caffe_models/images/traffic_light.png, alexnet, traffic light, 0.9999%, 0.30774
-caffe_models/images/traffic_light.png, googlenet, traffic light, 1.0%, 0.59575
-caffe_models/images/traffic_light.png, mobilenet, candle, 0.99635%, 0.35724
-caffe_models/images/traffic_light.png, resnet_101, traffic light, 1.0%, 4.0267
-caffe_models/images/traffic_light.png, shufflenet, web site, 289.76%, 0.15986
+eagle.png, alexnet, bald eagle, 0.99944, 0.31207
+eagle.png, googlenet, bald eagle, 0.99997, 0.59745
+eagle.png, mobilenet, candle, 0.99463, 0.34965
+eagle.png, resnet_101, bald eagle, 0.99969, 4.0436
+eagle.png, shufflenet, ant, 650.25, 0.15119
+cat.jpg, alexnet, red fox, 0.37571, 0.30839
+cat.jpg, googlenet, tiger cat, 0.5004, 0.59623
+cat.jpg, mobilenet, candle, 0.30695, 0.3605
+cat.jpg, resnet_101, tiger cat, 0.22623, 4.2278
+cat.jpg, shufflenet, spotlight, 288.66, 0.15922
+vending_machine.png, alexnet, vending machine, 0.98482, 0.31033
+vending_machine.png, googlenet, vending machine, 0.9966, 0.59767
+vending_machine.png, mobilenet, traffic light, 0.84283, 0.34931
+vending_machine.png, resnet_101, vending machine, 0.99898, 4.0601
+vending_machine.png, shufflenet, ant, 434.1, 0.16267
+jemma.png, alexnet, Weimaraner, 0.19839, 0.30822
+jemma.png, googlenet, beagle, 0.73989, 0.59589
+jemma.png, mobilenet, candle, 0.9995, 0.35799
+jemma.png, resnet_101, beagle, 0.63837, 4.0681
+jemma.png, shufflenet, spotlight, 258.36, 0.16039
+traffic_light.png, alexnet, traffic light, 0.9999, 0.32971
+traffic_light.png, googlenet, traffic light, 1.0, 0.59582
+traffic_light.png, mobilenet, candle, 0.99635, 0.35676
+traffic_light.png, resnet_101, traffic light, 1.0, 4.0748
+traffic_light.png, shufflenet, web site, 289.76, 0.16036
