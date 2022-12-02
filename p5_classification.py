@@ -29,7 +29,6 @@ def classify(args):
     # load our serialized model from disk
     print("[INFO] loading model...", file=sys.stderr)
     net = cv2.dnn.readNetFromCaffe(args.prototxt, args.model)
-
     # set the blob as input to the network and perform a forward-pass to
     # obtain our output classification
     net.setInput(blob)
@@ -38,6 +37,7 @@ def classify(args):
     end = time.time()
     total_time = end-start
     print("[INFO] classification took {:.5} seconds".format(total_time), file=sys.stderr)
+    flops = net.getFLOPS
 
     # sort the indexes of the probabilities in descending order (higher
     # probabilitiy first) and grab the top-5 predictions
@@ -60,7 +60,7 @@ def classify(args):
         result_labels.append(classes[idx])
         probabilities.append(preds[0][idx])
 
-    return image, total_time, result_labels, probabilities
+    return image, total_time, result_labels, probabilities, flops
 
 
 def parse_args():
