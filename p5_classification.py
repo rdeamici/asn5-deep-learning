@@ -24,7 +24,7 @@ def classify(args):
     # performing mean subtraction (104, 117, 123) to normalize the input;
     # after executing this command our "blob" now has the shape:
     # (1, 3, 224, 224)
-    blob = cv2.dnn.blobFromImage(image, 1, (224, 224), (104, 117, 123))
+    blob = cv2.dnn.blobFromImage(image, args.scale_factor, (224, 224), args.mean)
 
     # load our serialized model from disk
     print("[INFO] loading model...", file=sys.stderr)
@@ -76,11 +76,14 @@ def parse_args():
                     help="path to ImageNet labels (i.e., synsets)")
     ap.add_argument("-v", "--verbose", action="store_true",
                     help="print additional information to stderr")
-    return ap.parse_args()
-
+    args = ap.parse_args()
+    args.scale_factor = .017 if "mobilenet" in args.model or "shufflenet" in args.model else 1
+    args.mean = (103.94, 116.78, 123.68) if "mobilenet" in args.model or "shufflenet" in args.model else (104, 117, 123)
+    return args
 
 if __name__ == "__main__":
     args = parse_args()
+    args.scale_factor = 1 if  args.prototxt
     image, total_time, labels, probabilities, flops = classify(args)
 
     # display the output image

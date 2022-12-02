@@ -5,10 +5,13 @@ path_to_classifiers = "caffe_models/image_classification/"
 path_to_images = "caffe_models/images/"
 
 class Classifier:
-    def __init__(self, name):
+    def __init__(self, name, scale_factor, mean):
         self.path_to_images = path_to_images
         self.labels = "synset_words.txt"
         self.name = name
+        self.scale_factor = scale_factor
+        self.mean = mean
+
         self.path_to_classifier = os.path.join(path_to_classifiers, name)
         self.prototxt = None
         self.model = None
@@ -57,7 +60,15 @@ def compare():
         for classifiername in os.listdir(path_to_classifiers):
             if os.path.isfile(os.path.join(path_to_classifiers,classifiername)):
                 continue
-            classifier = Classifier(classifiername)
+            
+            if "shufflenet" in classifiername or "mobilenet" in classifiername:
+                scale_factor = 0.17
+                mean = (103.94, 116.78, 123.68)
+            else:
+                scale_factor = 1
+                mean = (104, 117, 123)
+            
+            classifier = Classifier(classifiername, scale_factor, mean)
             classifier.input_image = image
 
             for file in os.listdir(classifier.path_to_classifier):
