@@ -1,7 +1,7 @@
 classifier,best guess,probability,correct label,probability,total_time
-alexnet,vending machine,0.98482,vending machine,0.98482,0.3094
-shufflenet,ant,434.1,vending machine,-94.139,0.15908
-resnet_101,vending machine,0.99898,vending machine,0.99898,4.0616
-googlenet,vending machine,0.9966,vending machine,0.9966,0.59529
-mobilenet,traffic light,0.84283,vending machine,2.0896e-09,0.35685
-squeezenet,vending machine,0.99641,vending machine,0.99641,0.19133
+alexnet,vending machine,0.98482,vending machine,0.98482,0.31295,2326726595
+shufflenet,ant,434.1,vending machine,-94.139,0.17963,1439342056
+resnet_101,vending machine,0.99898,vending machine,0.99898,4.1531,15270642592
+googlenet,vending machine,0.9966,vending machine,0.9966,0.59622,3190443136
+mobilenet,traffic light,0.84283,vending machine,2.0896e-09,0.3525,9692871048
+squeezenet,vending machine,0.99641,vending machine,0.99641,0.20312,706628160
