@@ -66,30 +66,30 @@ def compare():
                     classifier.input_model = file
 
             if classifier.invalid():
-                print("*********FATAl ERROR*********")
+                print("*********FATAl ERROR*********", file = sys.stderr)
                 issue_in_classifier_dir = False
                 if classifier.prototxt is None:
-                    print("prototxt is None")
+                    print("prototxt is None", file = sys.stderr)
                     issue_in_classifier_dir = True
                 if classifier.model is None:
-                    print("model is None")
+                    print("model is None", file = sys.stderr)
                     issue_in_classifier_dir = True
                 if issue_in_classifier_dir:
-                    print(f"available files in '{classifier.path_to_classifier}'")
+                    print(f"available files in '{classifier.path_to_classifier}'", file = sys.stderr)
                     for f in os.listdir(classifier.path_to_classifier):
-                        print(f)
+                        print(f, file = sys.stderr)
                 if classifier.labels is None:
-                    print("labels is None")
+                    print("labels is None", file = sys.stderr)
                 if classifier.image is None:
-                    print("classifier.image is None. This shouldn't be possible")
-                    print(f"available images found in '{path_to_images}'")
+                    print("classifier.image is None. This shouldn't be possible", file = sys.stderr)
+                    print(f"available images found in '{path_to_images}'", file = sys.stderr)
                     for i in os.listdir(path_to_images):
-                        print(i)
-                sys.exit(1)
-
-            print(f"[INFO] CLASSIFIER NUMBER {len(results)+1}", file=sys.stderr)
-            classifier.classify()
-            results.append(classifier)
+                        print(i, file = sys.stderr)
+                print("*****SKIPPING CLASSIFIER*****", file = sys.stderr)
+            else:
+                print(f"[INFO] CLASSIFIER NUMBER {len(results)+1}", file=sys.stderr)
+                classifier.classify()
+                results.append(classifier)
 
     return results
 
