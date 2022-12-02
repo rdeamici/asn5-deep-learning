@@ -37,7 +37,7 @@ def classify(args):
     end = time.time()
     total_time = end-start
     print("[INFO] classification took {:.5} seconds".format(total_time), file=sys.stderr)
-    flops = net.getFLOPS
+    flops = net.getFLOPS()
 
     # sort the indexes of the probabilities in descending order (higher
     # probabilitiy first) and grab the top-5 predictions
