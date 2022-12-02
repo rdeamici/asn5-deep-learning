@@ -17,6 +17,7 @@ class Classifier:
         self.total_time = None
         self.cl_labels = None
         self.probabilities = None
+        self.flops = None
 
     @property
     def prototext(self):
@@ -97,7 +98,7 @@ def compare():
 
 def write_results_to_file(results):
     delimiter = ","
-    header = ["image", "classifier","best guess", "probability","total_time"]
+    header = ["image", "classifier","best guess", "probability","total_time", "flops"]
     with open("model_results.csv", "w") as f:
         f.write(delimiter.join(header))
         f.write("\n")
@@ -142,6 +143,7 @@ def write_results_to_file(results):
                                 f.write(delimiter+"{:.5}".format(classifier.probabilities[idx]))
 
                     f.write(delimiter+"{:.5}".format(classifier.total_time))
+                    f.write(delimiter+str(classifier.flops))
                     f.write("\n")
 
 
