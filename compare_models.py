@@ -41,7 +41,9 @@ class Classifier:
         self.image = os.path.join(self.path_to_images, filename)
 
     def classify(self):
-        self.result_image, self.total_time, self.cl_labels, self.probabilities = p5_classify(self)
+        self.result_image, self.total_time, self.cl_labels, self.probabilities, self.flops  = p5_classify(self)
+        print("FLOPS", file=sys.stderr)
+        print(self.flops)
 
     def invalid(self):
         return None in (self.prototxt, self.model, self.image, self.labels)

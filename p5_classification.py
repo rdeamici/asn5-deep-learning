@@ -81,7 +81,7 @@ def parse_args():
 
 if __name__ == "__main__":
     args = parse_args()
-    image, total_time, labels, probabilities = classify(args)
+    image, total_time, labels, probabilities, flops = classify(args)
 
     # display the output image
     cv2.imshow("Image", image)
