@@ -83,7 +83,8 @@ def compare():
                     for i in os.listdir(path_to_images):
                         print(i)
                 sys.exit(1)
-            
+
+            print(f"[INFO] CLASSIFIER NUMBER {len(results)+1}", file=sys.stderr)
             classifier.classify()
             results.append(classifier)
 
