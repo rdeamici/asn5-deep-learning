@@ -41,6 +41,9 @@ class Classifier:
     def classify(self):
         self.result_image, self.total_time, self.cl_labels, self.probabilities = p5_classify(self)
 
+    def invalid(self):
+        return None in (self.prototxt, self.model, self.image, self.labels)
+
 
 def compare():
     classifiers = ["alexnet","googlenet","mobilenet","resnet_101","shufflenet"]
@@ -57,15 +60,29 @@ def compare():
                     classifier.prototext = file
                 elif "caffemodel" in file:
                     classifier.input_model = file
-            if None in (classifier.prototxt, classifier.image, classifier.model, classifier.labels):
-                print("prototxt", classifier.prototxt)
-                print("input image",classifier.image)
-                print("model",classifier.model)
-                print("labels",classifier.labels)
-                print("all files in ",classifier.path_to_classifier)
-                for file in os.listdir(classifier.path_to_classifier):
-                    print(file)
+
+            if classifier.invalid(path_to_images):
+                print("*********FATAl ERROR*********")
+                issue_in_classifier_dir = False
+                if classifier.prototxt is None:
+                    print("prototxt is None")
+                    issue_in_classifier_dir = True
+                if classifier.model is None:
+                    print("model is None")
+                    issue_in_classifier_dir = True
+                if issue_in_classifier_dir:
+                    print(f"available files in '{classifier.path_to_classifier}'")
+                    for f in os.listdir(classifier.path_to_classifier):
+                        print(f)
+                if classifier.labels is None:
+                    print("labels is None")
+                if classifier.image is None:
+                    print("classifier.image is None. This shouldn't be possible")
+                    print(f"available images found in '{path_to_images}'")
+                    for i in os.listdir(path_to_images):
+                        print(i)
                 sys.exit(1)
+            
             classifier.classify()
             results.append(classifier)
 

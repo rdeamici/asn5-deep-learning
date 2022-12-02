@@ -14,9 +14,6 @@ import sys
 
 def classify(args):
     # load the input image from disk
-    for item in vars(args):
-        print(item)
-
     image = cv2.imread(args.image)
     # load the class labels from disk
     rows = open(args.labels).read().strip().split("\n")
