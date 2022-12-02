@@ -107,7 +107,7 @@ def write_results_to_file(results):
 
 def main():
     results = compare()
-
+    write_results_to_file(results)
 
 if __name__ == "__main__":
     main()
