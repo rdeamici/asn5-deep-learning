@@ -7,7 +7,7 @@ class Classifier:
         self.path_to_images = "caffe_models/images/"
         self.labels = "synset_words.txt"
         
-        self.path_to_classifier = self.path_to_classifiers+name
+        self.path_to_classifier = os.path.join(self.path_to_classifiers, name)
         self.prototxt = None
         self.model = None
         self.image = None
@@ -21,7 +21,7 @@ class Classifier:
         return self.prototxt
     @prototext.setter
     def prototext(self, filename):
-        self.prototxt = self.path_to_classifier+filename
+        self.prototxt = os.path.join(self.path_to_classifier, filename)
 
 
     @property
@@ -29,14 +29,14 @@ class Classifier:
         return self.model
     @input_model.setter
     def input_model(self, filename):
-        self.model = self.path_to_classifier+filename
+        self.model = os.path.join(self.path_to_classifier,filename)
 
     @property
     def input_image(self):
         return self.image
     @input_image.setter
     def input_image(self, filename):
-        self.image = self.path_to_images+filename
+        self.image = os.path.join(self.path_to_images, filename)
 
     def classify(self):
         self.result_image, self.total_time, self.cl_labels, self.probabilities = p5_classify(self)

@@ -14,6 +14,9 @@ import sys
 
 def classify(args):
     # load the input image from disk
+    for k,v in args:
+        print(k,":",v)
+
     image = cv2.imread(args.image)
     # load the class labels from disk
     rows = open(args.labels).read().strip().split("\n")
@@ -59,7 +62,7 @@ def classify(args):
         result_labels.append(classes[idx])
         probabilities.append(preds[0][idx])
 
-    return image, total_time, labels, probabilities
+    return image, total_time, result_labels, probabilities
 
 
 def parse_args():
