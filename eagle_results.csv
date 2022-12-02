@@ -1,7 +1,7 @@
 classifier,best guess,probability,correct label,probability,total_time,flops
-alexnet,bald eagle,0.99944,bald eagle,0.99944,0.31543,2326726595
-shufflenet,bald eagle,27.065,bald eagle,27.065,0.16996,1439342056
-resnet_101,bald eagle,0.99969,bald eagle,0.99969,4.1799,15270642592
-googlenet,bald eagle,0.99997,bald eagle,0.99997,0.60214,3190443136
-mobilenet,bald eagle,0.99942,bald eagle,0.99942,0.39174,9692871048
-squeezenet,bald eagle,0.99987,bald eagle,0.99987,0.1774,706628160
+alexnet,bald eagle,0.99944,bald eagle,0.99944,0.31429,2326726595
+shufflenet,bald eagle,27.065,bald eagle,27.065,0.17267,1439342056
+resnet_101,bald eagle,0.99969,bald eagle,0.99969,4.151,15270642592
+googlenet,bald eagle,0.99997,bald eagle,0.99997,0.59339,3190443136
+mobilenet,bald eagle,0.99942,bald eagle,0.99942,0.35466,9692871048
+squeezenet,bald eagle,0.99987,bald eagle,0.99987,0.19032,706628160
