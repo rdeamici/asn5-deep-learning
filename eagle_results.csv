@@ -1,0 +1,7 @@
+classifier,best guess,probability,correct label,probability,total_time
+alexnet,bald eagle,0.99944,bald eagle,0.99944,0.34354
+shufflenet,ant,650.25,bald eagle,-16.567,0.16637
+resnet_101,bald eagle,0.99969,bald eagle,0.99969,4.0756
+googlenet,bald eagle,0.99997,bald eagle,0.99997,0.59529
+mobilenet,candle,0.99463,bald eagle,4.9706e-10,0.35749
+squeezenet,bald eagle,0.99987,bald eagle,0.99987,0.19161

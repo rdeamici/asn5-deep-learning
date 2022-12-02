@@ -1,0 +1,7 @@
+classifier,best guess,probability,total_time
+alexnet,red fox,0.37571,0.309
+shufflenet,spotlight,288.66,0.18392
+resnet_101,tiger cat,0.22623,4.0792
+googlenet,tiger cat,0.5004,0.59366
+mobilenet,candle,0.30695,0.3577
+squeezenet,kit fox,0.45602,0.15377

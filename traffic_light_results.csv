@@ -1,0 +1,7 @@
+classifier,best guess,probability,correct label,probability,total_time
+alexnet,traffic light,0.9999,traffic light,0.9999,0.31055
+shufflenet,web site,289.76,traffic light,1.0162,0.21659
+resnet_101,traffic light,1.0,traffic light,1.0,4.0339
+googlenet,traffic light,1.0,traffic light,1.0,0.59605
+mobilenet,candle,0.99635,traffic light,0.0012369,0.35705
+squeezenet,traffic light,0.99983,traffic light,0.99983,0.18621
