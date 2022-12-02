@@ -53,7 +53,7 @@ def compare():
             classifier.input_image = image
 
             for file in os.listdir(classifier.path_to_classifier):
-                if "prototext" in file:
+                if "prototxt" in file:
                     classifier.prototext = file
                 elif "caffemodel" in file:
                     classifier.input_model = file
@@ -62,6 +62,9 @@ def compare():
                 print("input image",classifier.image)
                 print("model",classifier.model)
                 print("labels",classifier.labels)
+                print("all files in ",classifier.path_to_classifier)
+                for file in os.listdir(classifier.path_to_classifier):
+                    print(file)
                 sys.exit(1)
             classifier.classify()
             results.append(classifier)
