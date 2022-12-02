@@ -43,6 +43,8 @@ class Classifier:
 
     def classify(self):
         self.result_image, self.total_time, self.cl_labels, self.probabilities, self.flops  = p5_classify(self)
+        print("[INFO] flops",self.flops, file=sys.stderr)
+        print(str(self.flops), file=sys.stderr)
 
     def invalid(self):
         return None in (self.prototxt, self.model, self.image, self.labels)
