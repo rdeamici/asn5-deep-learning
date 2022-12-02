@@ -6,7 +6,7 @@ class Classifier:
         self.path_to_classifiers = "caffe_models/image_classification/"
         self.path_to_images = "caffe_models/images/"
         self.labels = "synset_words.txt"
-        
+        self.name = name
         self.path_to_classifier = os.path.join(self.path_to_classifiers, name)
         self.prototxt = None
         self.model = None
