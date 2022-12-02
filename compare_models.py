@@ -108,7 +108,7 @@ def write_results_to_file(results):
             f.write(delimiter+classifier.cl_labels[0])
             f.write(delimiter+"{:.5}".format(classifier.probabilities[0]))
             f.write(delimiter+"{:.5}".format(classifier.total_time))
-            f.write(delimiter+classifier.flops)
+            f.write(delimiter+str(classifier.flops))
             f.write("\n")
 
     image_header = ["classifier", "best guess", "probability", "correct label", "probability", "total_time", "flops"]
@@ -144,7 +144,7 @@ def write_results_to_file(results):
                                 f.write(delimiter+"{:.5}".format(classifier.probabilities[idx]))
 
                     f.write(delimiter+"{:.5}".format(classifier.total_time))
-                    f.write(delimiter+classifier.flops)
+                    f.write(delimiter+str(classifier.flops))
                     f.write("\n")
 
 

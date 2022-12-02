@@ -1,7 +1,7 @@
-classifier,best guess,probability,correct label,probability,total_time
-alexnet,traffic light,0.9999,traffic light,0.9999,0.31146,2326726595
-shufflenet,web site,289.76,traffic light,1.0162,0.16421,1439342056
-resnet_101,traffic light,1.0,traffic light,1.0,4.1841,15270642592
-googlenet,traffic light,1.0,traffic light,1.0,0.59683,3190443136
-mobilenet,candle,0.99635,traffic light,0.0012369,0.3542,9692871048
-squeezenet,traffic light,0.99983,traffic light,0.99983,0.20299,706628160
+classifier,best guess,probability,correct label,probability,total_time,flops
+alexnet,traffic light,0.9999,traffic light,0.9999,0.31692,2326726595
+shufflenet,web site,289.76,traffic light,1.0162,0.16431,1439342056
+resnet_101,traffic light,1.0,traffic light,1.0,4.1417,15270642592
+googlenet,traffic light,1.0,traffic light,1.0,0.59358,3190443136
+mobilenet,candle,0.99635,traffic light,0.0012369,0.35804,9692871048
+squeezenet,traffic light,0.99983,traffic light,0.99983,0.19787,706628160
