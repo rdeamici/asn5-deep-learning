@@ -69,26 +69,26 @@ def compare():
                     classifier.input_model = file
 
             if classifier.invalid():
-                print("*********FATAl ERROR*********", file = sys.stderr)
+                print("[ERROR] *********FATAl ERROR*********", file = sys.stderr)
                 issue_in_classifier_dir = False
                 if classifier.prototxt is None:
-                    print("prototxt is None", file = sys.stderr)
+                    print("[ERROR] prototxt is None", file = sys.stderr)
                     issue_in_classifier_dir = True
                 if classifier.model is None:
-                    print("model is None", file = sys.stderr)
+                    print("[ERROR] model is None", file = sys.stderr)
                     issue_in_classifier_dir = True
                 if issue_in_classifier_dir:
-                    print(f"available files in '{classifier.path_to_classifier}'", file = sys.stderr)
+                    print(f"[ERROR] available files in '{classifier.path_to_classifier}'", file = sys.stderr)
                     for f in os.listdir(classifier.path_to_classifier):
                         print(f, file = sys.stderr)
                 if classifier.labels is None:
-                    print("labels is None", file = sys.stderr)
+                    print("[ERROR] labels is None", file = sys.stderr)
                 if classifier.image is None:
-                    print("classifier.image is None. This shouldn't be possible", file = sys.stderr)
-                    print(f"available images found in '{path_to_images}'", file = sys.stderr)
+                    print("[ERROR] classifier.image is None. This shouldn't be possible", file = sys.stderr)
+                    print(f"[ERROR] available images found in '{path_to_images}'", file = sys.stderr)
                     for i in os.listdir(path_to_images):
                         print(i, file = sys.stderr)
-                print("*****SKIPPING CLASSIFIER*****", file = sys.stderr)
+                print("[ERROR] *****SKIPPING CLASSIFIER*****", file = sys.stderr)
             else:
                 print(f"[INFO] CLASSIFIER NUMBER {len(results)+1}", file=sys.stderr)
                 classifier.classify()
@@ -143,8 +143,9 @@ def write_results_to_file(results):
                                 f.write(delimiter+"{:.5}".format(classifier.probabilities[idx]))
 
                     f.write(delimiter+"{:.5}".format(classifier.total_time))
-                    f.write(delimiter+str(classifier.flops))
-                    print("[INFO] FLOPS",str(classifier.flops), file=sys.stderr)
+                    flops = str(classifier.flops)
+                    f.write(delimiter+flops)
+                    print("[INFO] FLOPS",flops, file=sys.stderr)
                     f.write("\n")
 
 
