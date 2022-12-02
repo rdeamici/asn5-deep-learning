@@ -96,10 +96,10 @@ def write_results_to_file(results):
     delimiter = ", "
     with open("model_results.csv", "a") as f:
         for classifier in results:
-            f.write(classifier.image)
+            f.write(os.path.basename(classifier.image))
             f.write(delimiter+classifier.name)
             f.write(delimiter+classifier.cl_labels[0])
-            f.write(delimiter+"{:.5}%".format(classifier.probabilities[0]))
+            f.write(delimiter+"{:.5}".format(classifier.probabilities[0]))
             f.write(delimiter+"{:.5}".format(classifier.total_time))
             f.write("\n")
 
