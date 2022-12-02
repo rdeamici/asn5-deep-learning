@@ -24,6 +24,7 @@ def classify(args):
     # performing mean subtraction (104, 117, 123) to normalize the input;
     # after executing this command our "blob" now has the shape:
     # (1, 3, 224, 224)
+    print(f"[INFO] for model {args.name}: scale factor is {args.scale_factor} and mean is {args.mean}")
     blob = cv2.dnn.blobFromImage(image, args.scale_factor, (224, 224), args.mean)
 
     # load our serialized model from disk
