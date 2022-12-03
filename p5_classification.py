@@ -65,6 +65,7 @@ def classify(args):
 
 
 def parse_args():
+    import os
     # construct the argument parse and parse the arguments
     ap = argparse.ArgumentParser()
     ap.add_argument("-i", "--image", required=True,
@@ -78,6 +79,7 @@ def parse_args():
     ap.add_argument("-v", "--verbose", action="store_true",
                     help="print additional information to stderr")
     args = ap.parse_args()
+    args.name,ext = os.path.splitext(os.path.basename(args.model))
     args.scale_factor = .017 if "mobilenet" in args.model or "shufflenet" in args.model else 1
     args.mean = (103.94, 116.78, 123.68) if "mobilenet" in args.model or "shufflenet" in args.model else (104, 117, 123)
     return args
